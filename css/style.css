@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700&display=swap');
+
+
+:root{
+    --font-famyly: 'Nunito Sans', sans-serif;
+  
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background: rgb(77, 71, 155);
+    width: 100%;
+    min-width: 100vh;
+    background: url(../img/fondo.jpg);
+    background-size: cover;
+}
+
+section{
+    width: 100%;
+    margin: 100px  auto;
+    border: 2px solid rgb(145, 17, 150);
+    background: #0000;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h2{
+    color: #fff;
+    font-size: 30px;
+    padding: 40px;
+    font-family: var(--font-famyly);
+}
+
+.left,
+.right{
+    width: 50%;
+    text-align: center;
+    border: 1px solid rgb(145, 17, 150);
+    padding: 15px;
+}
+
+button{
+    padding: 10px 30px;
+     background: rgb(241, 161, 174);
+     color: black;
+     font-weight: 500px;
+    font-size: 15px;
+    border-radius: 0 20px 0 20px;
+    transition: .5s;
+    border: 1px solid purple;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 8px 0 #27005D;
+}
+
+button:hover{
+    border-radius: 20px 0 20px  0;
+    background: #645573;
+    color: white;
+    font-weight: 500px;
+}
+
+#figura{
+    width: 200px;
+    height: 200px;
+    background: #494848;
+    border: 2px solid purple;
+    margin: 40px auto;
+    transition: 2s;
+}
+
+#figura.circulo{
+    border-radius: 50%;
+    background: brown;
+    border: 2px solid #f5f1f1;
+    transform: rotate(-360deg);
+}
+
+#figura.moveTop{
+    transform: translateY(-150px);
+    transition: 2s;
+}
+
+#figura.rectangulo{
+    width: 400px;
+}
+
+#figura.rombo{
+     width: 200px; 
+     height: 200px; 
+     border: 3px solid black; 
+     background: violet;
+     -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+     -ms-transform: rotate(45deg);
+     -o-transform: rotate(45deg);
+     transform: rotate(45deg);
+}
+
+#figura.imagen{
+    background: url(../img/12.jpg);
+    background-size: cover;
+}
+
+#figura.gif{
+    background: url(../img/goku.gif);
+    background-size: cover;
+}
+
+#figura.triangulo{
+    width: 100px;
+    height: 100px;
+    border-right: 200px solid transparent;
+    border-top: 200px solid transparent;
+    border-left: 200px solid transparent;
+    border-bottom: 200px solid rgb(240, 78, 240);
+    background: none;
+    margin-top: -150px;
+}
+
+#figura.hoja{
+    border-radius: 0 100px 0 100px;
+    transform: rotate(90deg);
+    background: rgb(106, 148, 226);
+    box-shadow: 2px;
+}
+
+#figura.pacMan {
+    width: 0; 
+    height: 0; 
+    border-right: 100px solid transparent; 
+    border-top: 100px solid orangered; 
+    border-left: 100px solid orangered; 
+    border-bottom: 100px solid orangered; 
+    border-radius: 100%; 
+    background: none;
+    position: relative;
+}
+
+#figura.pacMan::before {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#figura.luna{
+    width: 200px;
+    height: 200px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -moz-box-shadow: 30px 10px 0 ;
+    -webkit-box-shadow: 30px 10px 0 #d41a13;
+    box-shadow: 30px 10px 0 tan;
+    background: transparent;
+    border: none;
+}
+
+#figura.huevo{
+    width: 156px;
+    height: 200px;
+    border: none;
+    background-color: rgb(184, 111, 22);
+    -moz-border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    -webkit-border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+#figura.trapecio{
+   width: 300px;
+    height: 0px;
+    border-right: 60px solid transparent;
+    border-left: 60px solid transparent;
+    border-bottom: 100px solid mediumseagreen;
+    background: none;
+}
+
+#figura.moveLeft{
+    transform: translateX(-100px);
+    transition: 2s;
+}
+
+#figura.moveButtom{
+    transform: translateY(100px);
+    transition: 2s;
+}
+
+#figura.moveRight{
+    transform: translateX(100px);
+    transition: 2s;
+}
+
+/* estilos del panel */
+
+.panel-lateral {
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    left: -400px;
+    width: 400px;
+    text-align: center;
+    padding: 60px 30px;
+    height: 100vh;
+    transition: 2s;
+    background: gray;
+}
+
+.panel-lateral.active{
+    left: 0;
+    transition: 1s;
+}
+
+.panel-lateral h2{
+    color: white;
+}
+
+.panel-lateral a{
+    background: #E6E6FA;
+    color: #0F0F0F;
+    padding: 6px 20px;
+    display: block;
+    text-align: center;
+    margin: 15px 0;
+    text-decoration: none;
+    transition: .4s;
+}
+
+.panel-lateral a:hover{
+    transform: scale(1.07);
+}
+
+.panel-lateral a.close{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: transparent;
+    color: #0F0F0F;
+    font-size: 28px;
+}
+
+.panel-superior {
+    background-color: gray;
+    padding: 10px;
+    position: absolute;
+    top: -200px;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 2s;
+}
+
+
+.panel-superior.active{
+    top:0;
+    transition: 1s;
+}
+
+.panel-superior h2{
+    color: #ECF4D6;
+}
+
+.panel-superior a{
+    background: #E6E6FA;
+    color: black;
+    padding: 6px 20px;
+    text-align: center;
+    margin: 15px 0;
+    text-decoration: none;
+    transition: .4s; 
+}
+
+.panel-superior a:hover{
+    transform: scale(1.07);
+}
+
+.panel-superior a.close{
+    position: absolute;
+    top: 20px;
+    background: transparent;
+    color: #265073;
+    font-size: 28px;
+    transition: .4s;
+}
+
+body.back1{
+    background: url('../img/cambiarfondo.jpg');
+}
+
+.left.colorPri, 
+.right.colorPri {
+    border: 1px solid rgb(119, 12, 168);
+}
+
+section.colorSection{
+    background: #eb9eb7;
+    border: 1px solid rgb(12, 41, 168);
+}
+
+
+
+#figura.pentagono {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #3498db;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
